@@ -81,7 +81,7 @@
   width: min(6.094vw, 9.331vh, 117px);
   height: min(7.604vw, 11.642vh, 146px);
   right: max(-1.563vw, -2.392vh, -30px);
-  top: min(5.208vw, 7.974vh, 100px);
+  top: min(6.771vw, 10.367vh, 130px);
   z-index: 0;
   overflow: visible;
 }
@@ -125,12 +125,15 @@
   width: min(96.042vw, 147.05vh, 1844px);
   height: min(23.594vw, 36.124vh, 453px);
   margin: min(4.219vw, 6.459vh, 81px) auto 0;
+  /* Offset for positioning children at viewport edge */
+  --edge-offset: calc((min(96.042vw, 147.05vh, 1844px) - 100vw) / 2);
 }
 
 .hero__circle {
   position: absolute;
   border-radius: 50%;
   overflow: hidden;
+  z-index: 3;
 }
 
 .hero__circle--bordered {
@@ -217,22 +220,22 @@
   position: absolute;
   width: min(3.802vw, 5.822vh, 73px);
   height: min(19.063vw, 29.187vh, 366px);
-  left: 0;
+  left: var(--edge-offset, 0px);
   top: 0;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
   overflow: visible;
 }
 
 /* Dark S-curve: Figma 84×355, #0E0E0E stroke-width:8
-   Overlaps red curve, slightly offset right */
+   Overlaps red curve, offset slightly right from red */
 .hero__deco-dark {
   position: absolute;
   width: min(4.375vw, 6.699vh, 84px);
   height: min(18.490vw, 28.309vh, 355px);
-  left: min(0.781vw, 1.196vh, 15px);
+  left: calc(var(--edge-offset, 0px) + min(0.781vw, 1.196vh, 15px));
   top: 0;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
   overflow: visible;
 }
