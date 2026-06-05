@@ -61,8 +61,7 @@
 }
 
 /* Yellow underline SVG (Vector 5)
-   Figma: 594×56 SVG path, left:358, top:90 from head
-   Now uses exact Figma SVG path instead of CSS borders */
+   Figma: 594×56 SVG path, left:358, top:90 from head */
 .hero__underline {
   position: absolute;
   width: min(30.938vw, 47.368vh, 594px);
@@ -73,17 +72,20 @@
   overflow: visible;
 }
 
-/* Purple half-circle SVG
-   Figma: 117×146 wedge shape at right edge of head
-   Replaces the old CSS full-circle approximation */
+/* Purple half-circle (Ellipse 736)
+   Visually matched to Reference Image 2:
+   Right-half circle, rotated CCW so flat edge is `\` and curve is top-right. */
 .hero__purple-shape {
   position: absolute;
-  width: min(6.094vw, 9.331vh, 117px);
-  height: min(7.604vw, 11.642vh, 146px);
-  right: max(-1.563vw, -2.392vh, -30px);
-  top: min(6.771vw, 10.367vh, 130px);
+  width: min(4.056vw, 6.210vh, 77.88px); /* Half width for right-half circle */
+  height: min(8.113vw, 12.421vh, 155.76px); /* Full height */
+  background: #934CEC;
+  border-radius: 0 1000px 1000px 0; /* Creates right half circle */
+  transform: rotate(-30deg);
+  transform-origin: center center;
+  right: min(-1.5vw, -2vh, -20px);
+  top: min(5.5vw, 8vh, 110px);
   z-index: 0;
-  overflow: visible;
 }
 
 /* ===== HEADING =====
@@ -125,8 +127,6 @@
   width: min(96.042vw, 147.05vh, 1844px);
   height: min(23.594vw, 36.124vh, 453px);
   margin: min(4.219vw, 6.459vh, 81px) auto 0;
-  /* Offset for positioning children at viewport edge */
-  --edge-offset: calc((min(96.042vw, 147.05vh, 1844px) - 100vw) / 2);
 }
 
 .hero__circle {
@@ -214,27 +214,33 @@
 }
 
 /* ===== LEFT DECORATIVE SVG CURVES =====
-   Red S-curve: Figma 73×366, #FF7171 stroke-width:8
-   Positioned at left edge of images container */
+   Positioned from left edge of .hero__content.
+   Visually matched to Reference Image 2:
+   - Red curve starts high (aligned with line 1 "The thinkers"), fully visible.
+   - Black curve starts lower (aligned with line 2 "doers").
+   - Scaled up to match the massive size in the reference image. */
+
 .hero__deco-red {
   position: absolute;
   width: min(3.802vw, 5.822vh, 73px);
   height: min(19.063vw, 29.187vh, 366px);
-  left: var(--edge-offset, 0px);
-  top: 0;
+  left: 0;
+  top: min(4.167vw, 6.379vh, 80px); /* Aligned near "The" */
+  transform: scale(1.5);
+  transform-origin: top left;
   z-index: 1;
   pointer-events: none;
   overflow: visible;
 }
 
-/* Dark S-curve: Figma 84×355, #0E0E0E stroke-width:8
-   Overlaps red curve, offset slightly right from red */
 .hero__deco-dark {
   position: absolute;
   width: min(4.375vw, 6.699vh, 84px);
   height: min(18.490vw, 28.309vh, 355px);
-  left: calc(var(--edge-offset, 0px) + min(0.781vw, 1.196vh, 15px));
-  top: 0;
+  left: min(3.125vw, 4.784vh, 60px);
+  top: min(9.375vw, 14.354vh, 180px); /* Aligned near "doers" */
+  transform: scale(1.5);
+  transform-origin: top left;
   z-index: 1;
   pointer-events: none;
   overflow: visible;
