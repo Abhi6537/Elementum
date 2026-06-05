@@ -1,0 +1,300 @@
+/* ===========================================
+   HERO SECTION — All values from Figma (1920px base)
+   vw formula: figma_px / 19.2
+   At 1920px → exact Figma pixels
+   At 1376px → proportionally scaled (×0.717)
+   =========================================== */
+
+.hero {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 0;
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* ===== HEAD AREA =====
+   Figma: width:1332px, height:477px, left:308px, top:243px
+   top:243px = navbar(100px) + gap(143px)
+   Margin-top is the 143px gap below navbar */
+.hero__head {
+  position: relative;
+  width: min(69.375vw, 1332px);       /* 1332/19.2 */
+  text-align: center;
+  margin: min(7.448vw, 143px) auto 0; /* 143/19.2 */
+  padding: 0;
+}
+
+/* Pink pill (Rectangle 657)
+   Figma: 405×137, left:1235, top:367
+   Relative to head: right:0 (1235+405=1640, head-right=308+1332=1640), top:367-243=124 */
+.hero__pill-pink {
+  position: absolute;
+  width: min(21.094vw, 405px);         /* 405/19.2 */
+  height: min(7.135vw, 137px);         /* 137/19.2 */
+  right: 0;
+  top: min(6.458vw, 124px);            /* 124/19.2 */
+  background: #FFC2EA;
+  border-radius: 100px;
+  z-index: 0;
+}
+
+/* Green pill (Rectangle 658)
+   Figma: 456×109, left:561, top:498
+   Relative to head: left:561-308=253, top:498-243=255 */
+.hero__pill-green {
+  position: absolute;
+  width: min(23.75vw, 456px);          /* 456/19.2 */
+  height: min(5.677vw, 109px);         /* 109/19.2 */
+  left: min(13.177vw, 253px);          /* 253/19.2 */
+  top: min(13.281vw, 255px);           /* 255/19.2 */
+  background: #D7EEDD;
+  border-radius: 100px;
+  z-index: 0;
+}
+
+/* Yellow underline (Vector 5)
+   Figma: 594×50, left:666, top:333
+   Relative to head: left:666-308=358, top:333-243=90 */
+.hero__underline {
+  position: absolute;
+  width: min(30.938vw, 594px);         /* 594/19.2 */
+  height: min(2.604vw, 50px);          /* 50/19.2 */
+  left: min(18.646vw, 358px);          /* 358/19.2 */
+  top: min(4.688vw, 90px);             /* 90/19.2 */
+  border-top: min(0.313vw, 6px) solid #FFC250;
+  border-bottom: min(0.313vw, 6px) solid #FFC250;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Purple half-circle — positioned at right edge of head container */
+.hero__purple-shape {
+  position: absolute;
+  width: min(4.583vw, 88px);           /* 88/19.2 */
+  height: min(4.583vw, 88px);
+  right: calc(min(2.292vw, 44px) * -1); /* -44/19.2, extends outside head */
+  top: min(8.542vw, 164px);            /* 164/19.2 */
+  background: #934CEC;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* ===== HEADING =====
+   Figma: width:1305px, height:378px, left:308px, top:243px
+   Gerbil 400, 100px/126px, centered, 3 lines × 126px = 378px */
+.hero__heading {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400;
+  font-size: min(5.208vw, 100px);      /* 100/19.2 */
+  line-height: min(6.563vw, 126px);    /* 126/19.2 */
+  text-align: center;
+  color: #000000;
+  position: relative;
+  z-index: 1;
+  max-width: min(67.969vw, 1305px);    /* 1305/19.2 */
+  margin: 0 auto;
+}
+
+/* ===== SUBTITLE =====
+   Figma: width:831px, height:72px, left:545px, top:648px
+   Satoshi 400, 24px/36px, 2 lines
+   Gap from heading: top:648 - (top:243 + height:378) = 27px */
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: min(1.25vw, 24px);        /* 24/19.2 */
+  line-height: min(1.875vw, 36px);     /* 36/19.2 */
+  text-align: center;
+  color: #000000;
+  max-width: min(43.281vw, 831px);     /* 831/19.2 */
+  margin: min(1.406vw, 27px) auto 0;   /* 27/19.2 */
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== IMAGES CONTAINER =====
+   Figma: width:1844px, height:453px, left:38px, top:801px
+   Gap from subtitle: top:801 - (top:648 + height:72) = 81px */
+.hero__images-container {
+  position: relative;
+  width: min(96.042vw, 1844px);        /* 1844/19.2 */
+  height: min(23.594vw, 453px);        /* 453/19.2 */
+  margin: min(4.219vw, 81px) auto 0;   /* 81/19.2 */
+}
+
+.hero__circle {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.hero__circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Avatar circles — exact Figma positions =====
+   All positions relative to images container (left:38, top:801)
+   Circle sizes: 226×226 or 226×227 */
+
+/* Circle 1 (Ellipse 262): left:38, top:996 → rel: left:0, top:195 */
+.hero__circle--1 {
+  width: min(11.771vw, 226px);
+  height: min(11.771vw, 226px);
+  left: 0;
+  top: min(10.156vw, 195px);
+}
+
+/* Circle 2 (Ellipse 261): BORDERED, left:199, top:940 → rel: left:161, top:139 */
+.hero__circle--2 {
+  width: min(11.771vw, 226px);
+  height: min(11.771vw, 226px);
+  left: min(8.385vw, 161px);
+  top: min(7.240vw, 139px);
+}
+
+/* Circle 3 (Ellipse 255): left:553, top:801 → rel: left:515, top:0 */
+.hero__circle--3 {
+  width: min(11.771vw, 226px);
+  height: min(11.771vw, 226px);
+  left: min(26.823vw, 515px);
+  top: 0;
+}
+
+/* Circle 4 (Ellipse 256): left:677, top:1027 → rel: left:639, top:226 */
+.hero__circle--4 {
+  width: min(11.771vw, 226px);
+  height: min(11.823vw, 227px);
+  left: min(33.281vw, 639px);
+  top: min(11.771vw, 226px);
+}
+
+/* Circle 5 (Ellipse 257): left:977, top:856 → rel: left:939, top:55 */
+.hero__circle--5 {
+  width: min(11.719vw, 225px);
+  height: min(11.823vw, 227px);
+  left: min(48.906vw, 939px);
+  top: min(2.865vw, 55px);
+}
+
+/* Circle 6 (Ellipse 258): BORDERED, left:1144, top:940 → rel: left:1106, top:139 */
+.hero__circle--6 {
+  width: min(11.771vw, 226px);
+  height: min(11.771vw, 226px);
+  left: min(57.604vw, 1106px);
+  top: min(7.240vw, 139px);
+}
+
+/* Circle 7 (Ellipse 259): left:1414, top:801 → rel: left:1376, top:0 */
+.hero__circle--7 {
+  width: min(11.771vw, 226px);
+  height: min(11.771vw, 226px);
+  left: min(71.667vw, 1376px);
+  top: 0;
+}
+
+/* Circle 8 (Ellipse 260): left:1656, top:960 → rel: left:1618, top:159 */
+.hero__circle--8 {
+  width: min(11.771vw, 226px);
+  height: min(11.823vw, 227px);
+  left: min(84.271vw, 1618px);
+  top: min(8.281vw, 159px);
+}
+
+/* ===== LEFT DECORATIVE ELEMENTS ===== */
+.hero__deco-curve {
+  position: absolute;
+  width: min(13.542vw, 260px);
+  height: min(13.542vw, 260px);
+  left: min(-5.729vw, -110px);
+  top: min(4.688vw, 90px);
+  border: min(0.208vw, 4px) solid #FF6D6D;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(-20deg);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero__deco-dark-circle {
+  position: absolute;
+  width: min(3.646vw, 70px);
+  height: min(3.646vw, 70px);
+  left: min(-0.521vw, -10px);
+  top: min(13.021vw, 250px);
+  background: #1a1a1a;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ===== PINK BACKGROUND GLOW ===== */
+.hero__bg-glow {
+  position: absolute;
+  width: min(41.667vw, 800px);
+  height: min(19.792vw, 380px);
+  right: min(2.604vw, 50px);
+  top: min(-1.042vw, -20px);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 193, 234, 0.2) 0%,
+    rgba(255, 193, 234, 0.08) 50%,
+    transparent 75%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== RED DECORATIVE GLOW ===== */
+.hero__deco-glow {
+  position: absolute;
+  width: min(8.646vw, 166px);
+  height: min(8.646vw, 166px);
+  background: #FF2020;
+  filter: blur(min(7.813vw, 150px));
+  border-radius: 50%;
+  right: 30%;
+  top: 40%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* =========================================
+   MOBILE STRUCTURAL BREAKPOINT
+   Only for layout structure changes,
+   NOT for visual scaling (vw handles that)
+   ========================================= */
+
+@media (max-width: 768px) {
+  .hero__head {
+    width: 90vw;
+    padding: 0 4vw;
+  }
+  .hero__heading {
+    max-width: 90vw;
+  }
+  .hero__subtitle {
+    max-width: 90vw;
+  }
+  .hero__deco-curve,
+  .hero__deco-dark-circle {
+    display: none;
+  }
+  .hero__bg-glow {
+    display: none;
+  }
+}

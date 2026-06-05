@@ -1,0 +1,144 @@
+.footer {
+  width: 100%;
+  background: var(--accent-green);
+  padding: 100px 0 60px;
+}
+
+.footer__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+.footer__columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer__column-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  color: var(--text-primary);
+  margin-bottom: 36px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer__link {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--text-primary);
+  transition: opacity 0.3s ease;
+  padding: 5px 0;
+}
+
+.footer__link:hover {
+  opacity: 0.7;
+}
+
+.footer__address {
+  font-family: var(--font-address);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--text-primary);
+}
+
+/* Copyright */
+.footer__copyright {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: var(--text-primary);
+  margin-top: 200px;
+}
+
+/* Responsive */
+@media (max-width: 1280px) {
+  .footer__inner {
+    padding: 0 80px;
+  }
+  .footer__copyright {
+    margin-top: 140px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer__inner {
+    padding: 0 60px;
+  }
+  .footer__columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+  .footer__copyright {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 0 40px;
+  }
+  .footer__inner {
+    padding: 0 40px;
+  }
+  .footer__columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .footer__column-title {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+  .footer__link {
+    font-size: 16px;
+  }
+  .footer__address {
+    font-size: 16px;
+  }
+  .footer__copyright {
+    margin-top: 60px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 425px) {
+  .footer {
+    padding: 40px 0 30px;
+  }
+  .footer__inner {
+    padding: 0 20px;
+  }
+  .footer__columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer__column-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .footer__link {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .footer__address {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .footer__copyright {
+    margin-top: 40px;
+    font-size: 12px;
+  }
+}

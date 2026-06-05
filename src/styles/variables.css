@@ -1,0 +1,30 @@
+:root {
+  /* Colors */
+  --bg-white: #FFFFFF;
+  --text-primary: #000000;
+  --text-white: #FFFFFF;
+  --accent-red: #FF7171;
+  --accent-red-border: #FF6D6D;
+  --accent-red-glow: #FF2020;
+  --accent-green: #D7EEDD;
+  --accent-green-30: rgba(215, 238, 221, 0.3);
+  --accent-pink: #FFC2EA;
+  --accent-yellow: #FFC250;
+  --accent-purple: #934CEC;
+  --border-gray: #B1B1B1;
+  --btn-bg: #000000;
+
+  /* Typography */
+  --font-heading: 'Gerbil', 'Syne', sans-serif;
+  --font-body: 'Satoshi', 'DM Sans', sans-serif;
+  --font-address: 'Satoshi', 'DM Sans', sans-serif;
+
+  /* Spacing */
+  --container-max: 1920px;
+  --content-padding: 160px;
+  --content-width: 1600px;
+  --section-gap: 100px;
+
+  /* Navbar */
+  --navbar-height: 100px;
+}
