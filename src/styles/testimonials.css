@@ -2,7 +2,7 @@
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 100px var(--content-padding);
+  padding: 60px var(--content-padding);
   position: relative;
   overflow: hidden;
 }
@@ -10,8 +10,8 @@
 /* Section Heading */
 .testimonials__heading-wrapper {
   position: relative;
-  max-width: 685px;
-  margin: 0 auto 60px;
+  max-width: 500px;
+  margin: 0 auto 40px;
   text-align: center;
 }
 
@@ -39,8 +39,8 @@
 .testimonials__heading {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 56px;
-  line-height: 66px;
+  font-size: 36px;
+  line-height: 46px;
   text-align: center;
   letter-spacing: -0.025em;
   color: var(--text-primary);
@@ -52,9 +52,9 @@
 .testimonials__content {
   position: relative;
   width: 100%;
-  max-width: 1844px;
+  max-width: 1200px;
   margin: 0 auto;
-  min-height: 500px;
+  min-height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,11 +62,11 @@
 
 /* Quote Card */
 .testimonial-card {
-  width: 879px;
+  width: 600px;
   max-width: 100%;
-  padding: 48px 60px;
+  padding: 32px 40px;
   background: var(--accent-green-30);
-  border-radius: 60px;
+  border-radius: 40px;
   position: relative;
   z-index: 2;
 }
@@ -94,8 +94,8 @@
 .testimonial-card__text {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 30px;
-  line-height: 42px;
+  font-size: 16px;
+  line-height: 26px;
   text-align: center;
   color: var(--text-primary);
 }

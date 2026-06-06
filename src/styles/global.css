@@ -74,6 +74,69 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+/* Inline Highlight Span for Green Pill */
+.highlight-pill {
+  background: #d8ead9;
+  padding: 0.05em 0.35em;
+  border-radius: 999px;
+  display: inline-block;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Inline Highlight Span for Yellow Underline */
+.highlight-underline {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.highlight-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent-yellow);
+  transform: rotate(-2deg);
+  z-index: -1;
+}
+
+/* Inline Highlight Span for SVG Scribble */
+.highlight-scribble {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.highlight-scribble__svg {
+  position: absolute;
+  top: 50%;
+  left: -2%;
+  width: 104%;
+  height: 35%; /* Compacted */
+  transform: translateY(-50%);
+  z-index: -1;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Inline Highlight Span for Doodle Underline */
+.highlight-doodle-underline {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.highlight-doodle-underline__svg {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* Responsive container padding */
 @media (max-width: 1280px) {
   .container {

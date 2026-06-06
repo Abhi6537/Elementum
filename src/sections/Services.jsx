@@ -24,11 +24,13 @@ function Services() {
     <section className="services" id="services">
       {/* Section Heading */}
       <div className="services__heading-wrapper">
-        <div className="services__pill"></div>
-        <div className="services__underline"></div>
+        {/* Squiggly Line from Right Edge */}
+        <svg className="services__svg-line" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 500 100 C 400 100, 300 150, 200 250 C 100 350, 50 350, 0 350" stroke="#FF7171" strokeWidth="3" />
+        </svg>
         <h2 className="services__heading">
-          What we can<br />
-          offer you!
+          What we <span className="highlight-pill">can</span><br />
+          <span className="highlight-underline">offer</span> you!
         </h2>
       </div>
 
