@@ -112,8 +112,8 @@ function Hero() {
         </div>
 
         <p className="hero__subtitle">
-          We are a team of strategists, designers communicators, researchers. Togeather,
-          we belive that progress only hghappens when you refuse to play things safe.
+          We are a team of strategists, designers, communicators, researchers. Together,
+          we believe that progress only happens when you refuse to play things safe.
         </p>
 
         <div className="hero__images-container">

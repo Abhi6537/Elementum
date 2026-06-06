@@ -176,39 +176,60 @@
 
 @media (max-width: 1024px) {
   .services {
-    padding: 60px 60px;
+    padding: 60px 40px;
   }
   .services__heading {
-    font-size: 64px;
-    line-height: 76px;
+    font-size: 56px;
+    line-height: 1.2;
+  }
+  .services__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0;
   }
   .service-item {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
-    padding: 24px 0;
+    gap: 16px;
+    padding: 32px;
+    margin: 0;
+    border: 1px solid #EBEBEB;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  }
+  .service-item:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    transform: translateY(-5px);
+  }
+  .service-item:last-child {
+    border-bottom: 1px solid #EBEBEB;
   }
   .service-item__title {
-    font-size: 36px;
-    line-height: 60px;
+    font-size: 32px;
+    line-height: 1.2;
     padding-left: 0;
+    white-space: normal; /* allow wrapping on cards */
+  }
+  .service-item:hover .service-item__title {
+    transform: none; /* disable horizontal shift on cards */
   }
   .service-item__description {
     width: 100%;
+    padding-right: 0;
+  }
+  .service-item__desc-text {
+    font-size: 16px;
+    line-height: 1.6;
   }
   .service-item__arrow {
     align-self: flex-end;
+    margin-top: 16px;
   }
   .service-item__thumbnail {
-    width: 100px;
-    height: 100px;
-    margin-right: 0;
-  }
-  .services__pill {
-    display: none;
-  }
-  .services__underline {
-    display: none;
+    display: none; /* Hide hover thumbnails on mobile cards */
   }
 }
 

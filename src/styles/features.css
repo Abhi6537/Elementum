@@ -216,7 +216,7 @@
   }
   .feature-block,
   .feature-block--reverse {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 30px;
     align-items: center;
   }
