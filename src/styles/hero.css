@@ -226,7 +226,7 @@
   height: min(19.063vw, 29.187vh, 366px);
   left: 0;
   top: min(4.167vw, 6.379vh, 80px); /* Aligned near "The" */
-  transform: scale(1.5);
+  transform: scale(1.4);
   transform-origin: top left;
   z-index: 1;
   pointer-events: none;
@@ -239,7 +239,7 @@
   height: min(18.490vw, 28.309vh, 355px);
   left: min(3.125vw, 4.784vh, 60px);
   top: min(9.375vw, 14.354vh, 180px); /* Aligned near "doers" */
-  transform: scale(1.5);
+  transform: scale(1.4);
   transform-origin: top left;
   z-index: 1;
   pointer-events: none;
