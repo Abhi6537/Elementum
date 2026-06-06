@@ -6,19 +6,18 @@
   position: relative;
 }
 
-/* Section Heading */
 .services__heading-wrapper {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   max-width: 600px;
 }
 
 .services__svg-line {
   position: absolute;
-  top: 60px;
-  right: -200px;
-  width: 300px;
-  height: 200px;
+  top: -60px;
+  right: -300px;
+  width: 600px;
+  height: 300px;
   z-index: 0;
   pointer-events: none;
 }
@@ -26,62 +25,80 @@
 .services__heading {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 48px;
-  line-height: 58px;
+  font-size: 64px;
+  line-height: 1.1;
   color: var(--text-primary);
   position: relative;
   z-index: 1;
 }
 
-/* Service Items List */
 .services__list {
   width: 100%;
   max-width: 1600px;
 }
 
-/* Service Item */
 .service-item {
   display: flex;
   align-items: center;
-  padding: 16px 0;
-  border-top: 1px solid var(--border-gray);
+  padding: 40px 20px;
+  margin: 0 -20px;
+  border-top: 1px solid #EBEBEB;
   position: relative;
+  transition: background-color 0.3s ease;
+  border-radius: 12px;
+}
+
+.service-item:hover {
+  background-color: #F8FAF9;
 }
 
 .service-item:last-child {
-  border-bottom: 1px solid var(--border-gray);
+  border-bottom: 1px solid #EBEBEB;
 }
 
 .service-item__description {
   flex-shrink: 0;
-  width: 200px;
+  width: 300px;
+  padding-right: 20px;
 }
 
 .service-item__desc-text {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 15px;
+  line-height: 1.5;
   color: var(--text-primary);
 }
 
 .service-item__title {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 22px;
-  line-height: 32px;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: -1.5px;
   color: var(--text-primary);
   flex: 1;
-  padding-left: 40px;
+  padding-left: 0;
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-item__title {
+  transform: translateX(5px);
 }
 
 .service-item__thumbnail {
-  width: 100px;
-  height: 100px;
+  position: absolute;
+  right: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   overflow: hidden;
-  flex-shrink: 0;
-  margin-right: 20px;
+  z-index: 1;
 }
 
 .service-item__thumbnail img {
@@ -113,10 +130,9 @@
 }
 
 .service-item:hover .service-item__arrow {
-  transform: translateX(5px);
+  transform: translateX(10px);
 }
 
-/* Responsive */
 @media (max-width: 1440px) {
   .services {
     padding: 80px 80px;

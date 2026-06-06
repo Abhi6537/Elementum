@@ -1,3 +1,7 @@
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import '../styles/testimonials.css';
 import person1 from '../assets/images/person-1.png';
 import person2 from '../assets/images/person-2.png';
@@ -7,6 +11,8 @@ import person5 from '../assets/images/person-5.png';
 import person6 from '../assets/images/person-6.png';
 import person7 from '../assets/images/person-7.png';
 import person8 from '../assets/images/person-8.png';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const portraits = [
   { src: person1, className: 'testimonials__portrait--1' },
@@ -20,21 +26,80 @@ const portraits = [
 ];
 
 function Testimonials() {
+  const container = useRef(null);
+
+  useGSAP(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    gsap.from('.testimonials__heading-wrapper', {
+      scrollTrigger: {
+        trigger: '.testimonials__heading-wrapper',
+        start: 'top 85%',
+        once: true
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out'
+    });
+
+    gsap.from('.testimonial-card', {
+      scrollTrigger: {
+        trigger: '.testimonials__content',
+        start: 'top 80%',
+        once: true
+      },
+      scale: 0.95,
+      opacity: 0,
+      duration: 1,
+      ease: 'back.out(1.5)'
+    });
+
+    const avatars = container.current.querySelectorAll('.testimonials__portrait');
+    avatars.forEach((avatar, index) => {
+      gsap.from(avatar, {
+        scrollTrigger: {
+          trigger: '.testimonials__content',
+          start: 'top 70%',
+          once: true
+        },
+        scale: 0,
+        opacity: 0,
+        duration: 0.8,
+        delay: index * 0.1,
+        ease: 'back.out(1.5)',
+        onComplete: () => {
+          gsap.to(avatar, {
+            y: `random(-15, 15)`,
+            x: `random(-10, 10)`,
+            duration: `random(3, 5)`,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+          });
+        }
+      });
+    });
+
+  }, { scope: container });
+
   return (
-    <section className="testimonials" id="testimonials">
-      {/* Section Heading */}
+    <section className="testimonials" id="testimonials" ref={container}>
       <div className="testimonials__heading-wrapper">
-        <div className="testimonials__pill"></div>
-        <div className="testimonials__underline"></div>
         <h2 className="testimonials__heading">
-          What our customer{'\n'}
-          says About Us
+          <span className="testimonials__word-what">
+            <span className="testimonials__pill"></span>
+            What
+          </span>{' '}our customer<br />
+          says <span className="testimonials__word-about">
+            About Us
+            <span className="testimonials__underline"></span>
+          </span>
         </h2>
       </div>
 
-      {/* Content with portraits and card */}
       <div className="testimonials__content">
-        {/* Scattered portraits */}
         {portraits.map((portrait, index) => (
           <div
             key={index}
@@ -44,9 +109,8 @@ function Testimonials() {
           </div>
         ))}
 
-        {/* Quote Card */}
         <div className="testimonial-card">
-          <span className="testimonial-card__quotes-open">&ldquo;&ldquo;</span>
+          <span className="testimonial-card__quotes-open">&ldquo;</span>
           <p className="testimonial-card__text">
             Elementum delivered the site with inthe timeline
             as they requested. Inthe end, the client found a 50%
@@ -55,7 +119,7 @@ function Testimonials() {
             the company hasn&apos;t used, which have also proved to
             be easy to use and reliable
           </p>
-          <span className="testimonial-card__quotes-close">&rdquo;&rdquo;</span>
+          <span className="testimonial-card__quotes-close">&rdquo;</span>
         </div>
       </div>
     </section>

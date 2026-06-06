@@ -37,12 +37,28 @@
   font-size: 14px;
   line-height: 22px;
   color: var(--text-primary);
-  transition: opacity 0.3s ease;
   padding: 3px 0;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
 }
 
-.footer__link:hover {
-  opacity: 0.7;
+.footer__link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--text-primary);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.footer__link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .footer__address {
@@ -53,7 +69,6 @@
   color: var(--text-primary);
 }
 
-/* Copyright */
 .footer__copyright {
   font-family: var(--font-body);
   font-weight: 400;
@@ -64,7 +79,6 @@
   margin-top: 80px;
 }
 
-/* Responsive */
 @media (max-width: 1280px) {
   .footer__inner {
     padding: 0 80px;

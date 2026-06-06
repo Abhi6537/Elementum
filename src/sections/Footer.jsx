@@ -1,4 +1,10 @@
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import '../styles/footer.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const footerData = [
   {
@@ -16,8 +22,38 @@ const footerData = [
 ];
 
 function Footer() {
+  const container = useRef(null);
+
+  useGSAP(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 90%',
+        once: true
+      }
+    });
+
+    tl.from('.footer__column', {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+
+    tl.from('.footer__copyright', {
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, "-=0.2");
+
+  }, { scope: container });
+
   return (
-    <footer className="footer" id="footer">
+    <footer className="footer" id="footer" ref={container}>
       <div className="footer__inner">
         <div className="footer__columns">
           {footerData.map((column) => (
@@ -33,7 +69,6 @@ function Footer() {
             </div>
           ))}
 
-          {/* Address column */}
           <div className="footer__column">
             <h4 className="footer__column-title">Terms & Policies</h4>
             <div className="footer__address">

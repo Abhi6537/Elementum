@@ -6,19 +6,23 @@ import Testimonials from './sections/Testimonials';
 import Newsletter from './sections/Newsletter';
 import Footer from './sections/Footer';
 
+import { ReactLenis } from 'lenis/react';
+
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Services />
-        <Testimonials />
-        <Newsletter />
-      </main>
-      <Footer />
-    </div>
+    <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
+      <div className="app">
+        <Navbar />
+        <main>
+          <Hero />
+          <Features />
+          <Services />
+          <Testimonials />
+          <Newsletter />
+        </main>
+        <Footer />
+      </div>
+    </ReactLenis>
   );
 }
 

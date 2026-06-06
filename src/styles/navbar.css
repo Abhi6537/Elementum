@@ -8,7 +8,7 @@
 
 .navbar {
   width: 100%;
-  height: min(5.208vw, 7.974vh, 100px);
+  height: min(5.208vw, 100px);
   background: #FFFFFF;
   display: flex;
   align-items: center;
@@ -26,7 +26,6 @@
   padding: 0 min(8.333vw, 12.759vh, 160px);
 }
 
-/* Logo — Figma: Gerbil 400, 28px/46px, left:160 */
 .navbar__logo {
   font-family: var(--font-heading);
   font-style: normal;
@@ -38,7 +37,6 @@
   white-space: nowrap;
 }
 
-/* Nav links — Figma: centered, Satoshi 500 18px/24px */
 .navbar__links {
   display: flex;
   align-items: center;
@@ -61,7 +59,6 @@
   opacity: 0.7;
 }
 
-/* Hamburger — Figma: 45.36×10.5, right side */
 .navbar__hamburger {
   display: flex;
   flex-direction: column;
@@ -80,11 +77,10 @@
   border-top: 2px solid #000000;
 }
 
-/* Mobile Menu */
 .navbar__mobile-menu {
   display: none;
   position: fixed;
-  top: min(5.208vw, 7.974vh, 100px);
+  top: min(5.208vw, 100px);
   left: 0;
   width: 100%;
   background: #FFFFFF;
@@ -108,7 +104,6 @@
   padding: 8px 0;
 }
 
-/* ======= Mobile structural breakpoint ======= */
 @media (max-width: 768px) {
   .navbar__links {
     display: none;
@@ -125,6 +120,9 @@
     height: 8px;
   }
   .navbar {
-    height: 56px;
+    height: 64px;
+  }
+  .navbar__mobile-menu {
+    top: 64px;
   }
 }

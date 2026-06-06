@@ -1,16 +1,83 @@
-# React + Vite
+# Elementum - Strategic Design Agency
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance landing page for a strategic design agency. Built with React and animated using GSAP and Lenis for a premium, award-winning (Awwwards-style) user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Smooth Scrolling:** Powered by [Lenis](https://lenis.studiofreight.com/) for a buttery smooth navigation experience.
+- **Advanced Animations:** Utilizes [GSAP](https://greensock.com/gsap/) and `ScrollTrigger` for high-performance, scroll-linked animations.
+- **Dynamic Text Reveals:** Implemented using `split-type` for elegant line-by-line and character-by-character text reveals.
+- **Premium Aesthetics:** Custom glassmorphism, subtle micro-interactions, parallax effects, and smooth hover states.
+- **Responsive Design:** Fully fluid and responsive layout utilizing `clamp`, `vw`, and `vh` CSS techniques for perfect scaling across all devices.
+- **Accessibility:** Built-in `prefers-reduced-motion` support to automatically disable heavy animations for users who prefer minimal movement.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** React + Vite
+- **Styling:** Vanilla CSS
+- **Animation:** GSAP, `@gsap/react`, ScrollTrigger
+- **Scroll Smoothing:** `@studio-freight/react-lenis`
+- **Typography Splitting:** `split-type`
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+Ensure you have Node.js (v18+ recommended) and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate into the project directory:
+   ```bash
+   cd webdashboard
+   ```
+
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running Locally
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Navigate to `http://localhost:5173/` in your browser to view the application.
+
+### Building for Production
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+You can preview the built app using:
+
+```bash
+npm run preview
+```
+
+## Structure
+
+```text
+src/
+├── assets/         # Images, icons, and static assets
+├── components/     # Reusable UI components (e.g., Navbar)
+├── sections/       # Major page sections (Hero, Features, Services, etc.)
+├── styles/         # Global and component-specific CSS files
+├── App.jsx         # Main application component & Lenis provider
+└── main.jsx        # React entry point
+```
+
+## License
+
+[MIT](LICENSE)
